@@ -6,6 +6,10 @@ AI-only research for PBL: observe video prefixes, maintain bounded event memory,
 
 **Status:** software foundation and pretrained adapter; no trained emission policy, demonstrated quality improvement, or validated iPhone deployment yet. Synthetic demos and passing tests are not model-quality evidence.
 
+The option-A LoRA trainer, accepted-data preparation and paired dev diagnostics are
+now available; see [training](docs/guides/training.md). Real training remains gated on
+accepted labels, source rights, reconciled budget and the planned feasibility checks.
+
 ## Install and run
 
 Python 3.12 is the tested version. From the repository:
@@ -28,16 +32,21 @@ python -m pip install ".[test,inference]"
 python -m pytest --cov=eventcaption_ai --cov-report=term-missing
 ```
 
-For GPU inference, install the appropriate PyTorch build for your hardware instead of the CPU build. No weights are bundled. The adapter requires a locally available SmolVLM2 snapshot with an exact revision and does not download or retry silently. See [running inference](docs/running.md).
+For GPU inference, install the appropriate PyTorch build for your hardware instead of the CPU build. No weights are bundled. The adapter requires a locally available SmolVLM2 snapshot with an exact revision and does not download or retry silently. See [running inference](docs/guides/running.md).
+
+For a metadata-only Google Drive video inventory (including folders with more than
+1,000 files), install `.[drive]` and follow the [Windows OAuth and inventory guide](docs/guides/drive-inventory.md).
+This CPU tool does not download media or certify sources/labels for training.
 
 ## Read next
 
-1. [Research plan](docs/plan.md)
-2. [Architecture and contract](docs/architecture.md)
-3. [Data and annotation](docs/data.md)
-4. [Evaluation](docs/evaluation.md)
-5. [Current status and history](docs/status.md)
-6. [AI-to-iOS handoff](docs/handoff.md)
+1. [Documentation index](docs/README.md)
+2. [Research plan](docs/plan.md)
+3. [Architecture and contract](docs/reference/architecture.md)
+4. [Data and annotation](docs/reference/data.md)
+5. [Evaluation](docs/reference/evaluation.md)
+6. [Current status and history](docs/status.md)
+7. [AI-to-iOS handoff](docs/reference/handoff.md)
 
 This repository owns AI tooling and reference inference only. Backend, frontend, camera UI and the iOS application/runtime are owned by teammates and are not included. iPhone 16 Pro remains the deployment target, not an established capability.
 

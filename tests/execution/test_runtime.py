@@ -6,7 +6,7 @@ import pytest
 from eventcaption_ai.runtime import supervise
 from eventcaption_ai.budget import Budget
 from eventcaption_ai.model import messages, parse_response
-from tests.test_foundation import snapshot, decision
+from tests.helpers import snapshot, decision
 
 
 def test_supervisor_receipts_and_budget_including_failures(tmp_path):

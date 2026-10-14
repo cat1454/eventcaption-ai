@@ -1,0 +1,13 @@
+{
+  "schema": "training-gates/1",
+  "phase": "pilot",
+  "dataset_sha256": "REPLACE_FROM_PREPARED_DATASET_RECEIPT",
+  "config_sha256": "REPLACE_WITH_CANONICAL_CONFIG_SHA256",
+  "budget_path": "REPLACE_WITH_ABSOLUTE_RECONCILED_STUDY_LEDGER_PATH",
+  "budget_reconciled": false,
+  "reviewed_by": "",
+  "evidence": {
+    "data": {"path": "REPLACE_WITH_REVIEWED_DATA_EVIDENCE", "sha256": "REPLACE_WITH_FILE_SHA256"},
+    "budget": {"path": "REPLACE_WITH_HISTORICAL_RECONCILIATION", "sha256": "REPLACE_WITH_FILE_SHA256"}
+  }
+}

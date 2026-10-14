@@ -12,11 +12,14 @@ dependencies = ["numpy>=1.24,<3", "Pillow>=10,<12", "jsonschema>=4.19,<5"]
 
 [project.optional-dependencies]
 inference = ["transformers==4.51.3", "num2words==0.5.14", "av==16.1.0"]
+training = ["transformers==4.51.3", "peft==0.15.2", "num2words==0.5.14", "av==16.1.0"]
 test = ["pytest>=8,<9", "pytest-cov>=6,<8"]
+drive = ["google-api-python-client>=2,<3", "google-auth>=2,<3", "google-auth-httplib2>=0.2,<1", "google-auth-oauthlib>=1.2,<2"]
 
 [project.scripts]
 eventcaption = "eventcaption_ai.__main__:main"
 eventcaption-inference = "eventcaption_ai.inference:main"
+eventcaption-training = "eventcaption_ai.training:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

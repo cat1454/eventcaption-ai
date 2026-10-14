@@ -9,3 +9,5 @@ The event-caption/1 contract describes observed intervals, not forecasts. WAIT i
 Maintain bounded model context, honest raw traces, new output paths and the shared 40-hour GPU study budget (4 hours/run maximum, including load). This repository extraction does not authorize consuming all remaining budget without the research gates.
 
 Preserve data, weights, results, negative evidence and user changes. Keep secrets and local media out of Git. Tests and fixtures do not demonstrate trained-model quality or mobile readiness. No model downloads or GPU calls in CI.
+
+For model completion, use [docs/model-completion/README.md](docs/model-completion/README.md) as the task router. Load the relevant gate document before its stage; do not load every reference by default. Follow [agent-workflow.md](docs/model-completion/agent-workflow.md) for focused reads and evidence-linked handoffs. These documents do not approve runs or replace the research gates. Reuse unchanged evidence; never omit a required check to save tokens.

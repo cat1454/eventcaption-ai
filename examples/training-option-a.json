@@ -1,0 +1,26 @@
+{
+  "checkpoint": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+  "revision": "REPLACE_WITH_REVIEWED_40_HEX_REVISION",
+  "phase": "pilot",
+  "seed": 42,
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "max_steps": 100,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "warmup_steps": 5,
+  "gradient_accumulation": 4,
+  "max_grad_norm": 1.0,
+  "save_steps": 10,
+  "max_tokens": 4096,
+  "max_target_tokens": 512,
+  "lora": {
+    "target_modules": [
+      "model.text_model.layers.0.self_attn.q_proj",
+      "model.text_model.layers.0.self_attn.v_proj"
+    ],
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.05
+  }
+}

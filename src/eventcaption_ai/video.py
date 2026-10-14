@@ -1,20 +1,9 @@
-"""Sequential video decoder; never passes a full video to the model."""
-from .stream import nonnegative
+"""Compatibility path; implementation lives in eventcaption_ai.streaming.video."""
+import importlib as _importlib
+import sys as _sys
 
-
-def video_frames(path, max_media_ms=None):
-    if max_media_ms is not None:
-        nonnegative(max_media_ms, 'max_media_ms')
-    import av
-    with av.open(str(path)) as container:
-        stream = container.streams.video[0]
-        origin = None
-        for frame in container.decode(stream):
-            if frame.pts is None:
-                raise ValueError('Missing source PTS; cannot establish causal timing')
-            pts_ms = float(frame.pts * stream.time_base) * 1000
-            if origin is None:
-                origin = pts_ms
-            if max_media_ms is not None and pts_ms - origin > max_media_ms:
-                break
-            yield frame.to_ndarray(format='rgb24'), pts_ms - origin
+_implementation = _importlib.import_module("eventcaption_ai.streaming.video")
+if __name__ == "__main__":
+    raise SystemExit(_implementation.main())
+sys_module_name = __name__
+_sys.modules[sys_module_name] = _implementation

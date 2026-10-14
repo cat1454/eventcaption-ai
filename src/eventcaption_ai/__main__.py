@@ -4,9 +4,9 @@ import json
 from pathlib import Path
 import uuid
 
-from eventcaption_ai.stream import Frame, Snapshot
-from .data import validate_manifest, training_examples
-from .ledger import Consumer, Ledger
+from eventcaption_ai.streaming.stream import Frame, Snapshot
+from .learning.data import validate_manifest, training_examples
+from .core.ledger import Consumer, Ledger
 
 
 def write_json(path, value):

@@ -6,26 +6,19 @@ import sys
 
 import pytest
 
-from eventcaption_ai.stream import Frame, Snapshot
-from eventcaption_ai.contract import validate_decision, validate_record
-from eventcaption_ai.ledger import Ledger, Consumer
-from eventcaption_ai.engine import Engine
-from eventcaption_ai.data import validate_manifest, training_examples
-from eventcaption_ai.evaluation import compare
-from eventcaption_ai.budget import Budget
+from tests.helpers import decision, snapshot, source
+
+from eventcaption_ai.streaming.stream import Frame, Snapshot
+from eventcaption_ai.core.contract import validate_decision, validate_record
+from eventcaption_ai.core.ledger import Ledger, Consumer
+from eventcaption_ai.core.engine import Engine
+from eventcaption_ai.learning.data import validate_manifest, training_examples
+from eventcaption_ai.core.evaluation import compare
+from eventcaption_ai.execution.budget import Budget
 
 
-def snapshot(t=4000, index=None, value=0):
-    stamp = min(t, 4000) if index is None else t
-    return Snapshot((Frame(0 if index is None else index, stamp, stamp, (1, 1, 3), bytes([value] * 3)),), t)
 
 
-def decision(action="EMIT", previous=None, **changes):
-    result = dict(action=action, previous_record_id=previous,
-                  text="The person picks up a cup.", start_ms=2000, end_ms=None,
-                  event_status="ongoing", evidence_refs=["frame:0"])
-    result.update(changes)
-    return result
 
 
 def test_lifecycle_wait_reopen_and_consumer(tmp_path):
@@ -137,13 +130,6 @@ def test_prefix_isolation_bounded_memory_and_external_mutation(tmp_path):
     assert replay(0) == replay(255)
 
 
-def source(i, split="train", **changes):
-    row = dict(source_id=f"v{i}", sha256=str(i) * 64, origin_id=f"origin{i}",
-               session_id=f"session{i}", scenario_group=f"scenario{i}", split=split,
-               scene="food_drink", duration_ms=30000, training_allowed=True,
-               evaluation_allowed=True, license_evidence="self-recorded consent record", pilot=False)
-    row.update(changes)
-    return row
 
 
 def test_manifest_no_split_leakage_or_license_repurposing():

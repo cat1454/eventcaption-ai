@@ -3,7 +3,7 @@ import json
 import pytest
 
 from eventcaption_ai.__main__ import main
-from tests.test_foundation import source, decision
+from tests.helpers import source, decision
 
 
 def test_cli_demo_replay_and_exclusive_output(tmp_path, monkeypatch, capsys):

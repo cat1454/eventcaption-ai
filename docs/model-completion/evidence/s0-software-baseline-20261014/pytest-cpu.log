@@ -1,0 +1,53 @@
+........................................................................ [ 59%]
+..................................................                       [100%]
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.7-final-0 _______________
+
+Name                                                  Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------
+src\eventcaption_ai\__init__.py                           0      0   100%
+src\eventcaption_ai\__main__.py                          59      0   100%
+src\eventcaption_ai\adapters.py                           7      1    86%   7
+src\eventcaption_ai\budget.py                             7      1    86%   7
+src\eventcaption_ai\contract.py                           7      1    86%   7
+src\eventcaption_ai\core\__init__.py                      0      0   100%
+src\eventcaption_ai\core\contract.py                     91     12    87%   22, 25, 39, 42, 54, 75, 85-86, 89, 93, 100, 105
+src\eventcaption_ai\core\engine.py                       47      3    94%   9, 40, 45
+src\eventcaption_ai\core\evaluation.py                   29      7    76%   7, 9, 11, 23, 25, 27, 29
+src\eventcaption_ai\core\ledger.py                      123      6    95%   14, 51, 57, 99, 149, 151
+src\eventcaption_ai\data.py                               7      1    86%   7
+src\eventcaption_ai\dispatch.py                         434    101    77%   78-79, 84-85, 100-103, 106-107, 114, 119, 123, 125, 129, 133, 139, 141, 146, 153, 157, 162-163, 186, 191, 210, 234, 249, 285, 322, 334-341, 345, 368, 370, 383-387, 395, 398, 442-443, 462, 466, 476-477, 481-482, 542, 550, 561, 571, 576, 584, 600, 602, 604, 608, 617-622, 644, 654, 667-672, 693, 721-725, 733, 740, 747, 754-759, 763, 838-848
+src\eventcaption_ai\drive_inventory.py                    7      1    86%   7
+src\eventcaption_ai\engine.py                             7      1    86%   7
+src\eventcaption_ai\evaluation.py                         7      1    86%   7
+src\eventcaption_ai\execution\__init__.py                 0      0   100%
+src\eventcaption_ai\execution\budget.py                  37      1    97%   36
+src\eventcaption_ai\execution\inference.py               71     34    52%   18, 47-79, 83
+src\eventcaption_ai\execution\runtime.py                 54      5    91%   19, 24, 32, 53, 67
+src\eventcaption_ai\inference.py                          7      1    86%   7
+src\eventcaption_ai\integrations\__init__.py              0      0   100%
+src\eventcaption_ai\integrations\drive_inventory.py     188      8    96%   84-85, 220-222, 228, 230, 235
+src\eventcaption_ai\learning\__init__.py                  0      0   100%
+src\eventcaption_ai\learning\adapters.py                 59      6    90%   12, 32, 54, 56, 59, 75
+src\eventcaption_ai\learning\data.py                    101     19    81%   13, 18, 21, 26, 28, 31, 34, 53, 57, 62, 65, 71, 75, 77, 86, 88, 93, 101, 108
+src\eventcaption_ai\learning\model.py                    91     13    86%   22, 31, 62, 76, 78, 80-81, 93-97, 103
+src\eventcaption_ai\learning\training.py                286     45    84%   33, 45, 49, 51, 64, 85, 87, 89, 91, 115, 150, 155, 161, 176, 196, 216, 230-235, 244, 278-283, 288, 292, 298, 300-304, 311, 315-321, 330, 332, 339
+src\eventcaption_ai\learning\training_data.py           192     21    89%   34, 38, 51, 58, 82, 84, 87, 92, 99, 104, 109, 112, 123, 137, 140, 174, 190, 197, 201, 217, 223
+src\eventcaption_ai\learning\training_eval.py            69      7    90%   11, 37, 56-57, 64, 74, 80
+src\eventcaption_ai\ledger.py                             7      1    86%   7
+src\eventcaption_ai\model.py                              7      1    86%   7
+src\eventcaption_ai\processing.py                         7      1    86%   7
+src\eventcaption_ai\runtime.py                            7      1    86%   7
+src\eventcaption_ai\stream.py                             7      1    86%   7
+src\eventcaption_ai\streaming\__init__.py                 0      0   100%
+src\eventcaption_ai\streaming\processing.py              12      0   100%
+src\eventcaption_ai\streaming\stream.py                  76      0   100%
+src\eventcaption_ai\streaming\video.py                   17      0   100%
+src\eventcaption_ai\training.py                           7      1    86%   7
+src\eventcaption_ai\training_data.py                      7      1    86%   7
+src\eventcaption_ai\training_eval.py                      7      1    86%   7
+src\eventcaption_ai\video.py                              7      1    86%   7
+-----------------------------------------------------------------------------------
+TOTAL                                                  2155    305    86%
+Required test coverage of 80.0% reached. Total coverage: 85.85%
+122 passed in 32.89s

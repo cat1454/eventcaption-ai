@@ -27,3 +27,9 @@ checkpoints/
 .env
 .env.*
 !.env.example
+# OAuth material must remain outside the repository; defense against accidental copies.
+credentials.json
+token.json
+token.json.tmp
+client_secret*.json
+/google-drive/
